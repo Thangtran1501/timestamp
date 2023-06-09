@@ -15,8 +15,8 @@ public class TimestampController {
     public Response getTimestamp(@PathVariable long date) {
         Response response = new Response();
         SimpleDateFormat sdf = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
-        Date currentDate = new Date(date);
-        response.setUtc(sdf.format(currentDate));
+        Date utc = new Date(date);
+        response.setUtc(sdf.format(utc));
         response.setUnix(date);
         return response;
     }
